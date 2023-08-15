@@ -5,6 +5,8 @@ import {
   ProductTitle,
 } from '../components';
 
+import '../styles/custom-styles.css';
+
 const product = {
   id: '1',
   title: 'Coffee Mug - Card',
@@ -18,13 +20,23 @@ export function ShoppingPage() {
       <hr />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <ProductCard product={product}>
-          <ProductImage />
+          <ProductImage className="custom-image" />
           <ProductTitle />
           <ProductButtons />
         </ProductCard>
-        <ProductCard product={product}>
+        <ProductCard product={product} className="bg-dark text-white">
+          <ProductCard.Image className="custom-image" />
+          <ProductCard.Title className="text-bold" />
+          <ProductCard.Buttons className="custom-buttons" />
+        </ProductCard>
+        <ProductCard
+          product={product}
+          style={{
+            backgroundColor: '#70d1f8',
+          }}
+        >
           <ProductCard.Image />
-          <ProductCard.Title title="Another" />
+          <ProductCard.Title />
           <ProductCard.Buttons />
         </ProductCard>
       </div>
